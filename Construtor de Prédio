@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int andares, i = 1;
+    int janelas, j;
+    int y;
+    printf("Quantos andares você quer?\n");
+    scanf("%d", &andares);
+    
+    printf("Quantos janelas você quer?\n");
+    scanf("%d", &janelas);
+    
+    for(i; i <= andares; i++){
+        printf("|");
+        j = 1; 
+        for(j; j <= janelas; j++){
+            printf("[]");
+        }
+        for(y = 1; y <= 1; y++){
+        printf("|");
+        }
+        printf("\n");
+    }
+    return 0;
+}
