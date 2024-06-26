@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	int i,j, tamanho;	
+	char palavra[50], p_invertida[50];
+
+	printf("Digite uma frase para verificar se eh Palindromo: \n");
+	gets(palavra);
+	
+	tamanho = strlen(palavra);
+	
+	for(i=0;i<tamanho;i++){
+		p_invertida[i] = palavra[tamanho-1-i];
+	}
+
+	for(i=0;i<tamanho;i++){
+		printf("%c", p_invertida[i]);
+	}
+	
+	if(strcmp(palavra, p_invertida) == 0){
+		printf("\nEh um palindromo!");
+	}
+	else{
+		printf("\nNao eh um palindromo!");
+	}	
+	return 0;
+}
