@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+int main() {
+    char frase[100], chars;
+    int i;
+
+    printf("Digite uma frase: \n");
+    gets(frase);
+
+    printf("\nDigite uma unica letra: ");
+    scanf("%c", &chars);
+
+    for(i = 0; i < strlen(frase); i++) {
+        if(frase[i] == 'a') {
+            frase[i] = '4';
+        }
+        if(frase[i] == 's') {
+            frase[i] = chars;
+        }
+        if(frase[i] == ' ') {
+            printf("%d", strlen(frase));
+            continue; 
+        }
+        printf("%c", frase[i]);
+    }
+
+    return 0;
+}
