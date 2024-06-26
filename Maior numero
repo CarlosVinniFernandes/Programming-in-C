@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+        int maior, i,num[4];
+        printf("Digite 5 números:\n");
+        scanf("%d", &maior);
+    
+    for(i=0;i<4;i++){
+        scanf("%d", &num[i]);
+    
+        if(num[i] > maior){
+            maior = num[i];
+        }
+    }
+    
+    printf("O maior é o numero: %d", maior);
+    return 0;
+}
