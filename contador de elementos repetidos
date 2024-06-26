@@ -1,0 +1,28 @@
+/*Write a program in C to count the total number of duplicate elements in an array.
+Test Data :*/
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+    int i,j, vetor[10];
+    int contador = 0;
+    srand(time(NULL));
+    printf("Digite um número: \n");
+        for(i=0;i<10;i++){
+            vetor[i] = 1+rand()%10;
+            printf("%d ", vetor[i]);
+        }
+        
+        for(j=0;j < 10; j++){
+            for(i=j+1;i < 10; i++){
+                if(vetor[j] == vetor[i]){
+                    contador++;
+                    break;
+                }
+            }
+        }
+    printf("\nO numero de elementos repetidos é %d", contador);
+
+    return 0;
+}
