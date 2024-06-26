@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+     int num[5], i;
+     int aux[5], teste=4;
+    for(i=0;i<5;i++){
+        printf("Digite um num:\n");
+        scanf("%d", &num[i]);
+    }
+    for(i=0;i<5;i++){
+        printf("%d, ", num[i]);
+    }
+    printf("------------------------- ");
+    for(i=0;i<5;i++){
+        aux[i] = num[teste];
+               teste-=1;
+    }
+        for(i=0;i<5;i++){
+        printf("%d, ", aux[i]);
+        }
+
+    return 0;
+}
