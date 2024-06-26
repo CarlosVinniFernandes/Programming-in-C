@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+int main() {
+    char nome[50];
+    char temp;
+    int quantidade;
+    int i,j;
+    
+    printf("Digite seu nome: \n");
+    scanf("%[^\n]", nome);
+    
+    printf("Digite a quantidade que você quer que embaralhe: ");
+    scanf("%d", &quantidade);
+
+    srand(time(NULL)); 
+
+    int tamanho = strlen(nome);
+
+    for(i=0;i<quantidade;i++){
+        for (j = 0; j < tamanho; j++) {
+        int k = rand() % tamanho; 
+        temp = nome[j];
+        nome[j] = nome[k];
+        nome[k] = temp;
+        }
+        printf("Nome embaralhado: %s\n", nome);
+    }
+    return 0;
+}
