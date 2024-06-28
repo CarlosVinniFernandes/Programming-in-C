@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char nomes[3][52];
+    int i, j,k;
+    char temp;
+
+    for (i = 0; i < 3; i++) {
+        printf("Digite o nome %d: ", i + 1);
+        scanf("%s", nomes[i]);
+    }
+
+    for (i = 0; i < 2; i++) {
+        for (j = i + 1; j < 3; j++) {
+            if (strcmp(nomes[i], nomes[j]) > 0) {
+                for (k = 0; k < 52; k++) {
+                    temp = nomes[i][k];
+                    nomes[i][k] = nomes[j][k];
+                    nomes[j][k] = temp;
+
+                }
+            }
+        }
+    }
+
+    printf("\nNomes ordenados em ordem alfabética:\n");
+    for (i = 0; i < 3; i++) {
+        printf("%s\n", nomes[i]);
+    }
+
+    return 0;
+}
+
