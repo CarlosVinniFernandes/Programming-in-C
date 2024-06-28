@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int contador = 0;
+	char palavra[50];
+	char caracter_palavra;
+    printf("Digite uma palavra: \n");
+    scanf("%[^\n]", palavra);
+	//gets(palavra);
+    
+    int i;
+    for (i = 0; i < strlen(palavra) ; i++){
+        
+		caracter_palavra = palavra[i];
+		//printf("%c", caracter_palavra);
+		if(caracter_palavra ==  ' '){
+        	contador++;
+		}
+    }
+    printf("frase [%s] tem %d palavras" , palavra, contador+1);
+    return 0;
+}
+
