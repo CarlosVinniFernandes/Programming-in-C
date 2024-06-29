@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	int x, y, i, j, soma, media, z,contador = 0;
+	printf("Digite um numero: ");
+	scanf("%d", &x);
+	
+	printf("Digite outro numero: ");
+	scanf("%d", &y);
+	
+	if(x>y){
+	printf("\n------------------------\ntodos os itens: ");
+	for(i = x; i >= y;i--){
+		printf("%d", i);
+	}
+	printf("\n------------------------\ntotal da soma: ");
+	for(j = y; j <= x;j++){
+		soma += j;
+		}
+		printf("%d", soma);
+	printf("\n------------------------\nquantidade de itens: ");
+	for(z = y;z <= x;z++){
+		contador +=1;
+}	
+	media = soma/contador;
+	printf("%d", contador);
+	printf("\n------------------------\nmedia: ");
+	printf("%d", media);
+}
+	else{
+	printf("\n------------------------\ntodos os itens: ");
+
+	for(i = x; i <= y;i++){
+		printf("%d", i);
+	}
+	printf("\n------------------------\ntotal da soma: ");
+	for(j = x; j <= y;j++){
+		soma += j;
+		}
+		printf("%d", soma);
+	printf("\n------------------------\nquantidade de itens: ");
+	for(z = x;z <= y;z++){
+		contador +=1;
+}	
+	media = soma/contador;
+	printf("%d", contador);
+	printf("\n------------------------\nmedia: ");
+	printf("%d", media);
+}
+return 0;
+}
