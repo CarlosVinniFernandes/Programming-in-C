@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	int i,j;
+	int matriz[4][4];
+	int maior_impar1 = 0;
+	int maior_impar2 = 0;
+	int maior_par1 = 0;
+	int maior_par2 = 0;
+	
+	printf("Digite um número entre 1 e 9: ");
+	
+	for(i=0;i< 4;i++){
+		for(j=0; j<4;j++){
+			scanf("%d", &matriz[i][j]);
+			if(matriz[i][j] <= 9 && matriz[i][j] > 0){
+				continue;
+			}
+			else{
+				printf("Digite um valor entre 1 e 9, patrao!\n");
+				return 0;
+			}
+		}
+		printf("\n");
+	}
+	printf("\n---------------------------------------------\n");	
+	
+	
+	for(i=0;i< 4;i++){
+		for(j=0; j<4;j++){
+				printf("%d ", matriz[i][j]);
+		}
+		printf("\n");
+	}
+
+
+	for(i=0;i< 4;i++){
+		for(j=0; j<4;j++){
+			if(matriz[0][j]){
+				if(matriz[0][j] > maior_par1 && matriz[0][j]%2==0){
+					maior_par1 = matriz[0][j];
+				}
+			}
+			if(matriz[1][j]){
+				if(matriz[1][j] > maior_impar1 && matriz[1][j]%2!=0){
+					maior_impar1 = matriz[1][j];
+				}
+			}
+			if(matriz[2][j]){
+				if(matriz[2][j] > maior_par2 && matriz[2][j]%2==0){
+					maior_par2 = matriz[2][j];
+				}
+			}
+			if(matriz[3][j]){
+				if(matriz[3][j] > maior_impar2 && matriz[3][j]%2!=0){
+					maior_impar2 = matriz[3][j];
+				}
+			}
+		}
+	}
+	
+	printf("\n---------------------------------------------\n");
+	printf("\A o maior numero par da linha 1 = %d\n", maior_par1);
+	printf("\A O maior numero impar da linha 2 = %d\n", maior_impar1);
+	printf("\A o maior numero par da linha 3 = %d\n", maior_par2);
+	printf("\A O maior numero impar da linha 4 = %d\n", maior_impar2);
+	
+	
+	return 0;
+}
