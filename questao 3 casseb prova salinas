@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    char nome[50];
+    char vogais[] = {'a', 'e', 'i', 'o', 'u'};
+    int tamanho, escolha, i, j, k, aux;
+
+    srand(time(NULL));
+
+    printf("Digite o tamanho do nome: ");
+    scanf("%d", &tamanho);
+
+    printf("Deseja mais vogais ou consoantes? [1] para mais vogais, [2] para mais consoantes: ");
+    scanf("%d", &escolha);
+
+
+    if (escolha == 1) {
+        // Digitar vogais
+        for (i = 0; i < tamanho * 2 / 3; i++) {
+            nome[i] = vogais[rand() % 5];
+        }
+        // Digitar consoantes
+        for (; i < tamanho; i++) {
+            nome[i] = 'a' + rand() % 20;
+        }
+    } else if (escolha == 2) {
+        // Digitar consoantes
+        for (i = 0; i < tamanho * 2 / 3; i++) {
+            nome[i] = 'a' + rand() % 20;
+        }
+        // Digitar vogais
+        for (; i < tamanho; i++) {
+            nome[i] = vogais[rand() % 5];
+        }
+    } else {
+        printf("Opção inválida.\n");
+        return 1;
+    }
+
+    // Embaralhar
+    for (i = 0; i < tamanho; i++) {
+        j = rand() % tamanho;
+        k = rand() % tamanho;
+        aux = nome[j];
+        nome[j] = nome[k];
+        nome[k] = aux;
+    }
+
+    // Imprimir o nome
+    printf("Nome gerado: ");
+    for (i = 0; i < tamanho; i++) {
+        printf("%c", nome[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
