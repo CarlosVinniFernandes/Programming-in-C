@@ -1,0 +1,13 @@
+//celsius to fahrenheit
+#include <stdio.h>
+
+int main()
+{
+    int cel, trans;
+    printf("Digite a temperatura em graus Celsius\n");
+    scanf("%d", &cel);
+    
+    trans = (cel*9/5) + 32;
+    printf("A temperatura de %dº Celsius é igual a %dº Fahrenheit", cel, trans); 
+    return 0;
+}
