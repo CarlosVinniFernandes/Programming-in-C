@@ -1,0 +1,128 @@
+//Lei dos Cosss
+
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14159265358979323846
+
+float deg2rad(float degrees) {
+    return degrees * (PI / 180.0);
+}
+int main()
+{
+   int raiz;
+   printf("Sua conta usara raiz? Digite 0 ou 1\n");
+   scanf("%d", &raiz);
+   
+   if (raiz == 1) {
+   float valorraiz;  
+   printf("Digite o lado que está dentro da raiz\n");
+   scanf("%f", &valorraiz);
+   float ladoraiz; 
+   ladoraiz = sqrt(valorraiz);
+   
+   float lado2, angulo;
+   printf("Digite o outro lado\n");
+   scanf("%f", &lado2);
+   
+   printf("Digite o angulo informado\n");
+   scanf("%f", &angulo);
+   
+   angulo = deg2rad(angulo);
+   
+   float resultado1, resultado2; 
+   resultado1 = pow(ladoraiz,2) + pow(lado2, 2) - 2*ladoraiz*lado2*cos(angulo);
+   resultado2 = sqrt(resultado1);
+   printf("O lado que voce quer eh igual a %f", resultado2);
+}
+   else if (raiz == 0) {
+   printf("Ola, voce quer descobrir quanto vale o lado X, entao...\n");
+   
+   float lado1;
+   printf("Digite um lado\n");
+   scanf("%f", &lado1);
+   
+   float lado2;
+   printf("Digite o outro lado\n");
+   scanf("%f", &lado2);
+   
+   float angulo;
+   printf("Digite um angulo\n");
+   scanf("%f", &angulo);
+   
+   angulo = deg2rad(angulo);
+   
+   float resultado1, resultado2;
+   resultado1 = pow(lado1, 2)+pow(lado2, 2)-2*lado1*lado2*cos(angulo);
+   resultado2 = sqrt(resultado1);
+   
+   printf("O lado que voce esta procurando eh %f", resultado2);
+   }
+    return 0;
+}
+
+
+
+
+Chat gpt version:
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14159265358979323846
+
+float deg2rad(float degrees) {
+    return degrees * (PI / 180.0);
+}
+
+int main() {
+    printf("Ola, voce quer descobrir quanto vale o lado X, entao...\n");
+
+    int resposta;
+    printf("O lado tem raiz? (1 para sim, 0 para nao)\n");
+    scanf("%d", &resposta);
+
+    if (resposta == 1) {
+        float ladoraiz;
+        printf("Digite o valor da raiz do lado:\n");
+        scanf("%f", &ladoraiz);
+
+        float lado = sqrt(ladoraiz);
+
+        float lado2, angulo;
+        printf("Digite o segundo lado:\n");
+        scanf("%f", &lado2);
+
+        printf("Digite o angulo (em graus):\n");
+        scanf("%f", &angulo);
+
+        angulo = deg2rad(angulo);
+
+        float resultado1, resultado2;
+        resultado1 = pow(lado, 2) + pow(lado2, 2) - 2 * lado * lado2 * cos(angulo);
+        resultado2 = sqrt(resultado1);
+
+        printf("O lado que voce esta procurando eh %f\n", resultado2);
+    }
+    else if (resposta == 0) {
+        float lado1, lado2, angulo;
+        printf("Digite o primeiro lado:\n");
+        scanf("%f", &lado1);
+
+        printf("Digite o segundo lado:\n");
+        scanf("%f", &lado2);
+
+        printf("Digite o angulo (em graus):\n");
+        scanf("%f", &angulo);
+
+        angulo = deg2rad(angulo);
+
+        float resultado1, resultado2;
+        resultado1 = pow(lado1, 2) + pow(lado2, 2) - 2 * lado1 * lado2 * cos(angulo);
+        resultado2 = sqrt(resultado1);
+
+        printf("O lado que voce esta procurando eh %f\n", resultado2);
+    }
+    else {
+        printf("Resposta invalida.\n");
+    }
+
+    return 0;
+}
