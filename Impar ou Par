@@ -1,0 +1,21 @@
+//Detector de numero impar ou par
+#include <stdio.h>
+
+int main()
+{
+    int num1, divisao;
+    printf("Digite um número\n");
+    scanf("%d", &num1);
+    
+    divisao = num1%2;
+    
+    if (divisao == 1){
+    printf("Seu número é impar");
+    
+    }
+    else 
+    if (divisao == 0){
+    printf("Seu número é par");
+    }
+    return 0;
+}
