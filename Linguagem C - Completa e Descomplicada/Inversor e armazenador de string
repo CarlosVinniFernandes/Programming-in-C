@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int i,j, tamanho;
+    char palavra[50], p_invertida[50];
+    printf("Digite uma palavra: \n");
+    scanf("%s", palavra);
+    
+    tamanho = strlen(palavra);
+    
+    for(i = 0; i < tamanho;i++){
+        p_invertida[i] = palavra[tamanho-1-i];
+    }
+    
+    printf("A palavra invertida fica: %s", p_invertida);
+    return 0;
+}
