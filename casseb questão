@@ -1,0 +1,35 @@
+/* QUESTAO 1 */
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char nomes[3][52];
+    int i, j,l;
+    char aux;
+
+    for (i = 0; i < 3; i++) {
+        printf("Digite um nome: %d\n", i + 1);
+        scanf("%s", nomes[i]);
+    }
+
+    for (i = 0; i < 2; i++) {
+        for (j = i + 1; j < 3; j++) {
+            if (strcmp(nomes[i], nomes[j]) < 0)
+			 {
+                for (l = 0; l < 52; l++) 
+				{
+                    aux = nomes[i][l];
+                    nomes[i][l] = nomes[j][l];
+                    nomes[j][l] = aux;
+        	}
+       	 }
+        }
+    }
+	printf("--------------------------------------------------------\n");
+    printf("Nomes na ordem Z-A: \n");
+    for (i = 0; i < 3; i++) {
+        printf("%do nome: %s\n", i+1,nomes[i]);
+    }
+
+    return 0;
+}
